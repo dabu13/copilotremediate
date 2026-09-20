@@ -1,0 +1,142 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAJ45Q7YFFAREXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/Alice",
+        "accountId": "123456789012",
+        "userName": "Alice"
+      },
+      "eventTime": "2026-08-26T15:00:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "StartInstances",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.168.1.10",
+      "userAgent": "aws-cli/2.0.0",
+      "requestParameters": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-1234567890abcdef0"
+            }
+          ]
+        }
+      },
+      "responseElements": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-1234567890abcdef0",
+              "currentState": {
+                "code": 0,
+                "name": "pending"
+              },
+              "previousState": {
+                "code": 80,
+                "name": "stopped"
+              }
+            }
+          ]
+        }
+      },
+      "eventType": "AwsApiCall"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAJ45Q7YFFAREXAMPLE",
+        "arn": "arn:aws:iam::123456789012:user/Bob",
+        "accountId": "123456789012",
+        "userName": "Bob"
+      },
+      "eventTime": "2026-08-26T16:30:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "StopInstances",
+      "awsRegion": "us-west-2",
+      "sourceIPAddress": "10.0.0.5",
+      "userAgent": "Boto3/1.17.0",
+      "requestParameters": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-0987654321fedcba0"
+            }
+          ]
+        },
+        "force": false
+      },
+      "responseElements": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-0987654321fedcba0",
+              "currentState": {
+                "code": 64,
+                "name": "stopping"
+              },
+              "previousState": {
+                "code": 16,
+                "name": "running"
+              }
+            }
+          ]
+        }
+      },
+      "eventType": "AwsApiCall"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAJ45Q7YFFAREXAMPLE:AdminSession",
+        "arn": "arn:aws:sts::123456789012:assumed-role/AdminRole/AdminSession",
+        "accountId": "123456789012",
+        "sessionContext": {
+          "sessionIssuer": {
+            "type": "Role",
+            "principalId": "AROAJ45Q7YFFAREXAMPLE",
+            "arn": "arn:aws:iam::123456789012:role/AdminRole",
+            "accountId": "123456789012",
+            "userName": "AdminRole"
+          }
+        }
+      },
+      "eventTime": "2026-08-26T17:45:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "TerminateInstances",
+      "awsRegion": "eu-central-1",
+      "sourceIPAddress": "203.0.113.50",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-11112222333344445"
+            }
+          ]
+        }
+      },
+      "responseElements": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-11112222333344445",
+              "currentState": {
+                "code": 32,
+                "name": "shutting-down"
+              },
+              "previousState": {
+                "code": 16,
+                "name": "running"
+              }
+            }
+          ]
+        }
+      },
+      "eventType": "AwsApiCall"
+    }
+  ]
+}
